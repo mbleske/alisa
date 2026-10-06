@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Alisa A. Bleske: operations, logistics, and stakeholder support. Resume, work samples, and event portfolio.">
+<title>Alisa Bleske</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+
+/* Layout: a game-day call sheet. Left rail of labels, right column of content, ruled sections. */
+:root {
+  --bg: #F6F7F4;
+  --surface: #FFFFFF;
+  --ink: #111311;
+  --muted: #4A4F4A;
+  --rule: #D4D8D1;
+  --accent: #1E5638;
+  --accent-soft: #E3ECE5;
+  --display: "Saira Condensed", "Arial Narrow", Arial, sans-serif;
+  --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121512; --surface: #1A1E1A; --ink: #EEF1EC; --muted: #A9B0A8;
+    --rule: #2E342E; --accent: #7FC29A; --accent-soft: #1F2E24; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121512; --surface: #1A1E1A; --ink: #EEF1EC; --muted: #A9B0A8;
+  --rule: #2E342E; --accent: #7FC29A; --accent-soft: #1F2E24; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 1rem; line-height: 1.6; }
+.wrap { max-width: 980px; margin: 0 auto; padding-inline: 20px; padding-block: 48px 72px; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Header */
+header { display: grid; gap: 20px; padding-bottom: 32px; border-bottom: 3px solid var(--ink); }
+.eyebrow { font-family: var(--mono); font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+h1 { font-family: var(--display); font-weight: 700; font-size: clamp(3rem, 9vw, 5.5rem); line-height: .9; letter-spacing: .01em; text-transform: uppercase; margin: 0; }
+.thesis { font-size: clamp(1.1rem, 2.4vw, 1.35rem); max-width: 40ch; margin: 0; text-wrap: balance; }
+.contact { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip { display: inline-flex; align-items: center; gap: 10px; border: 1px solid var(--rule); background: var(--surface); padding: 8px 12px; font-family: var(--mono); font-size: .85rem; }
+.chip span { user-select: all; }
+.chip-link { color: var(--accent); text-decoration: none; }
+.chip-link span { user-select: auto; }
+.chip-link:hover { border-color: var(--accent); }
+.chip button { font: inherit; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; background: var(--accent-soft); color: var(--ink); border: 0; padding: 3px 8px; cursor: pointer; }
+.chip button:hover { background: var(--accent); color: var(--bg); }
+
+/* Stat strip */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--rule); }
+.stat { padding: 20px 16px 20px 0; display: grid; gap: 2px; }
+.stat + .stat { padding-left: 16px; border-left: 1px solid var(--rule); }
+.stat b { font-family: var(--display); font-weight: 600; font-size: 2.4rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.stat small { font-size: .82rem; color: var(--muted); line-height: 1.35; }
+@media (max-width: 640px) {
+  .stats { grid-template-columns: 1fr 1fr; }
+  .stat:nth-child(3) { padding-left: 0; border-left: 0; }
+  .stat:nth-child(n+3) { border-top: 1px solid var(--rule); }
+}
+
+/* Sections: label rail + content */
+section { display: grid; grid-template-columns: 180px 1fr; gap: 24px; padding-block: 40px; border-bottom: 1px solid var(--rule); }
+section > h2 { font-family: var(--display); font-weight: 600; font-size: 1.15rem; letter-spacing: .1em; text-transform: uppercase; margin: 0; padding-top: 4px; color: var(--accent); }
+.content { min-width: 0; display: grid; gap: 28px; }
+@media (max-width: 720px) { section { grid-template-columns: 1fr; gap: 16px; } }
+
+.summary p { margin: 0; max-width: 65ch; }
+.summary p + p { margin-top: 12px; }
+
+/* Roles */
+.role { display: grid; gap: 8px; }
+.role h3 { font-family: var(--display); font-weight: 600; font-size: 1.5rem; line-height: 1.15; margin: 0; text-wrap: balance; }
+.org { font-weight: 500; color: var(--muted); margin: 0; }
+.role ul { margin: 4px 0 0; padding-left: 1.1rem; display: grid; gap: 6px; max-width: 68ch; }
+
+/* Education + skills */
+.edu { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.edu div { display: grid; gap: 2px; }
+.edu b { font-weight: 600; }
+.edu span { color: var(--muted); font-size: .92rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.tags li { border: 1px solid var(--rule); padding: 4px 10px; font-size: .88rem; }
+
+/* Work list */
+.work { display: grid; gap: 0; }
+.item { display: grid; grid-template-columns: 1fr auto; gap: 6px 20px; align-items: start; padding-block: 18px; border-top: 1px solid var(--rule); }
+.item:first-child { border-top: 0; padding-top: 0; }
+.kind { font-family: var(--mono); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.item .kind { grid-column: 1 / -1; }
+.item h3, .feature h3 { font-size: 1.08rem; font-weight: 600; margin: 0; line-height: 1.35; text-wrap: balance; }
+.item .item-specs { grid-column: 1; }
+.item p { grid-column: 1; margin: 0; color: var(--muted); max-width: 62ch; font-size: .95rem; }
+.open { font-family: var(--mono); font-size: .8rem; text-decoration: none; border: 1px solid var(--accent); padding: 8px 14px; white-space: nowrap; }
+.item .open { grid-column: 2; grid-row: 2 / span 2; align-self: center; }
+.open:hover { background: var(--accent); color: var(--bg); }
+@media (max-width: 560px) {
+  .item { grid-template-columns: 1fr; }
+  .item .open { grid-column: 1; grid-row: auto; justify-self: start; margin-top: 6px; }
+}
+
+.feature + .work .item:first-child { border-top: 1px solid var(--rule); padding-top: 22px; margin-top: -10px; }
+
+/* Portfolio strip */
+.strip-wrap { grid-column: 1 / -1; overflow-x: auto; margin-top: 8px; }
+.strip { display: flex; gap: 10px; padding-bottom: 6px; }
+.strip a { flex: 0 0 auto; display: block; border: 1px solid var(--rule); line-height: 0; }
+.strip a:hover { border-color: var(--accent); }
+.strip img { width: 240px; max-width: none; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+@media (max-width: 560px) { .strip img { width: 200px; } }
+
+/* HomeDesk feature */
+.feature { display: grid; gap: 14px; padding-top: 22px; border-top: 1px solid var(--rule); }
+.feature > p { margin: 0; color: var(--muted); max-width: 62ch; font-size: .95rem; }
+.specs { display: flex; flex-wrap: wrap; gap: 6px 18px; list-style: none; margin: 0; padding: 0; font-size: .88rem; }
+.specs li::before { content: "▸ "; color: var(--accent); }
+.board-wrap { overflow-x: auto; border: 1px solid var(--rule); background: var(--surface); }
+.board { display: grid; grid-template-columns: repeat(3, minmax(170px, 1fr)); gap: 12px; padding: 14px; min-width: 540px; }
+.col { display: grid; align-content: start; gap: 8px; }
+.col-head { display: flex; justify-content: space-between; font-family: var(--mono); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding-bottom: 6px; border-bottom: 2px solid var(--ink); }
+.ticket { border: 1px solid var(--rule); background: var(--bg); padding: 9px 10px; display: grid; gap: 6px; }
+.ticket b { font-size: .85rem; font-weight: 600; line-height: 1.3; }
+.ticket .meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-family: var(--mono); font-size: .66rem; color: var(--muted); }
+.pri { padding: 1px 6px; border: 1px solid currentColor; text-transform: uppercase; letter-spacing: .06em; }
+.pri.high { color: var(--ink); font-weight: 500; }
+.ticket.done b { text-decoration: line-through; color: var(--muted); }
+.board-note { font-family: var(--mono); font-size: .7rem; color: var(--muted); padding: 0 14px 12px; margin: 0; }
+
+footer { padding-top: 28px; font-family: var(--mono); font-size: .78rem; color: var(--muted); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .chip button, .open { transition: background .15s, color .15s; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Operations · Logistics · Stakeholder Support</div>
+    <h1>Alisa A.<br>Bleske</h1>
+    <p class="thesis">I build the systems, relationships, and coordination that help people and organizations operate successfully.</p>
+    <div class="contact">
+      <div class="chip"><span id="email">aableske@dons.usfca.edu</span><button type="button" id="copy-email" data-target="email">Copy</button></div>
+      <div class="chip"><span id="phone">805-801-2052</span><button type="button" id="copy-phone" data-target="phone">Copy</button></div>
+      <a class="chip chip-link" href="https://www.linkedin.com/in/alisableske" target="_blank" rel="noopener"><span>linkedin.com/in/alisableske</span></a>
+      <div class="chip"><span>Los Angeles, CA</span></div>
+    </div>
+  </header>
+
+  <section id="work">
+    <h2>Work</h2>
+    <div class="content">
+      <div class="work">
+        <div class="item">
+          <span class="kind">Resume · PDF</span>
+          <h3>Resume</h3>
+          <a class="open" href="resume.pdf" target="_blank" rel="noopener">Open PDF</a>
+        </div>
+        <div class="item">
+          <span class="kind">Strategy case study · USF Sport Marketing</span>
+          <h3>Stanford NIL Partnership Strategy</h3>
+          <p>An academic cohort model for recurring athlete and brand partnerships.</p>
+          <a class="open" href="stanford-nil-case-study.pdf" target="_blank" rel="noopener">Read case study</a>
+        </div>
+        <div class="item">
+          <span class="kind">Career prospectus · USF Sport Management</span>
+          <h3>Career Prospectus: Football Operations</h3>
+          <p>A career plan built from interviews with NFL and collegiate football operations professionals.</p>
+          <a class="open" href="career-prospectus.pdf" target="_blank" rel="noopener">Read prospectus</a>
+        </div>
+        <div class="item">
+          <span class="kind">Systems design · Fact sheet</span>
+          <h3>Chief of Staff Operating System</h3>
+          <ul class="specs item-specs">
+            <li>iCal</li>
+            <li>Reminders</li>
+            <li>Shortcuts</li>
+            <li>Automation</li>
+          </ul>
+          <a class="open" href="operating-system.png" target="_blank" rel="noopener">View sheet</a>
+        </div>
+      </div>
+
+      <div class="feature" id="homedesk">
+        <span class="kind">Product build · Web app</span>
+        <h3>HomeDesk</h3>
+        <p>A ticket-based task tracker modeled on the issue systems tech teams use, built to assign, prioritize, and track household responsibilities from a phone. Every task is a structured ticket with an owner, a status, and a due date, so nothing depends on memory or a verbal reminder.</p>
+        <ul class="specs">
+          <li>Board and list views</li>
+          <li>Priority and status tracking</li>
+          <li>Filters by owner and status</li>
+          <li>Open-queue summary</li>
+          <li>Custom categories</li>
+        </ul>
+        <div class="board-wrap" aria-label="HomeDesk board preview">
+          <div class="board">
+            <div class="col">
+              <div class="col-head"><span>Open</span><span>2</span></div>
+              <div class="ticket"><b>Replace garage door sensor</b><div class="meta"><span class="pri high">High</span><span>Home Repairs</span></div></div>
+              <div class="ticket"><b>Schedule gutter cleaning</b><div class="meta"><span class="pri">Med</span><span>Yard &amp; Outdoor</span></div></div>
+            </div>
+            <div class="col">
+              <div class="col-head"><span>In Progress</span><span>2</span></div>
+              <div class="ticket"><b>Renew vehicle registration</b><div class="meta"><span class="pri high">High</span><span>Finances &amp; Bills</span></div></div>
+              <div class="ticket"><b>Order replacement patio cushions</b><div class="meta"><span class="pri">Low</span><span>Errands &amp; Shopping</span></div></div>
+            </div>
+            <div class="col">
+              <div class="col-head"><span>Done</span><span>1</span></div>
+              <div class="ticket done"><b>Fix hallway light fixture</b><div class="meta"><span class="pri">Med</span><span>Home Repairs</span></div></div>
+            </div>
+          </div>
+          <p class="board-note">Board preview with example tickets</p>
+        </div>
+      </div>
+      <div class="work">
+          <div class="item portfolio">
+            <span class="kind">Event portfolio · Alisa Bleske Events</span>
+            <h3>Event Planner Portfolio</h3>
+            <p>Selected private events from concept through execution.</p>
+            <a class="open" href="events-portfolio.pdf" target="_blank" rel="noopener">View portfolio</a>
+            <div class="strip-wrap">
+              <div class="strip" aria-label="Portfolio pages">
+                <a href="events-portfolio.pdf" target="_blank" rel="noopener"><img src="portfolio-1.jpg" alt="Portfolio cover" loading="lazy"></a>
+                <a href="events-portfolio.pdf" target="_blank" rel="noopener"><img src="portfolio-2.jpg" alt="Portfolio page 2" loading="lazy"></a>
+                <a href="events-portfolio.pdf" target="_blank" rel="noopener"><img src="portfolio-3.jpg" alt="Portfolio page 3" loading="lazy"></a>
+                <a href="events-portfolio.pdf" target="_blank" rel="noopener"><img src="portfolio-4.jpg" alt="Portfolio page 4" loading="lazy"></a>
+                <a href="events-portfolio.pdf" target="_blank" rel="noopener"><img src="portfolio-5.jpg" alt="Portfolio page 5" loading="lazy"></a>
+                <a href="events-portfolio.pdf" target="_blank" rel="noopener"><img src="portfolio-6.jpg" alt="Portfolio page 6" loading="lazy"></a>
+                <a href="events-portfolio.pdf" target="_blank" rel="noopener"><img src="portfolio-7.jpg" alt="Portfolio page 7" loading="lazy"></a>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats" aria-label="Operations at a glance">
+    <div class="stat"><b>20–30</b><small>private events produced each year</small></div>
+    <div class="stat"><b>50+</b><small>food, beverage, and merchandise vendors per festival</small></div>
+    <div class="stat"><b>80</b><small>volunteers led per festival</small></div>
+    <div class="stat"><b>3-Day</b><small>outdoor festival operations, load-in to breakdown</small></div>
+  </div>
+
+  <section id="profile">
+    <h2>Profile</h2>
+    <div class="content summary">
+      <p>Event operations professional moving an established skill set into football operations, with a focus on team travel and logistics, game day operations, and player and staff support.</p>
+      <p>My work has always been the part that keeps an operation running: run-of-show documents, production schedules, staffing plans, budgets, credentialing, licensing, and the vendor and venue partnerships behind them. I am currently earning an M.S. in Sport Management at the University of San Francisco and working UCLA home game days at the Rose Bowl.</p>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="content">
+      <article class="role">
+        <h3>Event Operations Consultant</h3>
+        <p class="org">Independent Consultant · Los Angeles, CA</p>
+        <ul>
+          <li>Direct planning through execution for complex, high-budget private events across greater Los Angeles.</li>
+          <li>Coordinate hotels, venues, food and beverage teams, vendors, and onsite staff to client specifications.</li>
+          <li>Build run-of-show materials, timelines, production schedules, staffing plans, budgets, and contingency plans; serve as primary operational liaison for each event.</li>
+        </ul>
+      </article>
+      <article class="role">
+        <h3>Event Operations Manager &amp; Producer</h3>
+        <p class="org">LA Party Stylists · Calabasas, CA</p>
+        <ul>
+          <li>Produced 20–30 private events annually, from planning and logistics through vendor coordination and post-event reconciliation.</li>
+          <li>Directed hotel, venue, and food and beverage partnerships, including BEO execution, room configurations, banquet timing, vendor load-in and load-out, staffing, and onsite changes.</li>
+          <li>Served as primary liaison between clients and partner organizations, managing run-of-show documents, timelines, budget tracking, and real-time problem solving.</li>
+        </ul>
+      </article>
+      <article class="role">
+        <h3>Head of Concessions &amp; Merchandise Operations</h3>
+        <p class="org">Live Oak Music Festival · San Luis Obispo County, CA</p>
+        <ul>
+          <li>Led concessions and merchandise operations for a three-day outdoor music festival.</li>
+          <li>Coordinated 20+ food and beverage vendors, 30 merchandise vendors, and roughly 80 volunteers across product development, procurement, inventory, and vendor partnerships.</li>
+          <li>Managed liquor licensing and regulatory compliance, partnered on festival budgeting and reconciliation, and served on the festival steering committee.</li>
+          <li>Led pre-event planning, including vendor recruitment, credentialing, licensing, staffing, and coordination with government agencies and law enforcement.</li>
+          <li>Developed planning systems, staffing plans, and timelines; coordinated site logistics, load-in, and breakdown.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="content">
+      <div class="edu">
+        <div><b>M.S., Sport Management</b><span>University of San Francisco · In progress</span></div>
+        <div><b>B.A., Child Development and Education</b><span>Minor in Psychology · California State University, Northridge</span></div>
+      </div>
+      <ul class="tags" aria-label="Tools">
+        <li>AI productivity tools (ChatGPT, Claude)</li>
+        <li>Microsoft 365</li>
+        <li>Google Workspace</li>
+        <li>Salesforce</li>
+        <li>Event management software</li>
+        <li>Project management software</li>
+        <li>Canva</li>
+        <li>LinkedIn, Instagram, TikTok, Facebook</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>Alisa A. Bleske</footer>
+</div>
+
+<script>
+document.querySelectorAll('.chip button').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var el = document.getElementById(btn.dataset.target);
+    var text = el.textContent;
+    var reset = function () { setTimeout(function () { btn.textContent = 'Copy'; }, 1500); };
+    var fallback = function () {
+      var r = document.createRange(); r.selectNodeContents(el);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      btn.textContent = 'Selected'; reset();
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { btn.textContent = 'Copied'; reset(); }, fallback);
+    } else { fallback(); }
+  });
+});
+</script>
+</body>
+</html>
